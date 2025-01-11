@@ -1,0 +1,10 @@
+__pycache__/
+*.ipynb
+*.log
+*.csv
+*.json
+*.zst
+/src/data/
+/scratch/
+.DS_Store
+/src/ckpt/
