@@ -19,8 +19,6 @@ def load_and_process_df(file_path):
         convert_labels_to_binary(labels) for labels in df["emotion"]
     ]
 
-    df = keep_existing_paintings(df)
-
     return df
 
 

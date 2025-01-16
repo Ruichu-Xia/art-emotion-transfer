@@ -39,6 +39,8 @@ def train_model_single_epoch(
 
         total_loss += loss.item()
 
+        progress_bar.set_postfix({"loss": loss.item()})
+
     avg_train_loss = total_loss / len(train_loader)
     return avg_train_loss
 
