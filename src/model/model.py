@@ -1,10 +1,13 @@
 import torch.nn as nn
 
 class EmotionEmbeddingModel(nn.Module):
-    def __init__(self, base_model, num_classes, hidden_size, num_hidden_layers=1):
+    def __init__(self, base_model, num_classes, hidden_size, num_hidden_layers=1, freeze_layers=False):
         super(EmotionEmbeddingModel, self).__init__()
         self.base = base_model
-
+        if freeze_layers:
+            for param in self.base.parameters():
+                param.requires_grad = False
+                
         layers = []
         input_size = 2048  # ResNet output size
 
