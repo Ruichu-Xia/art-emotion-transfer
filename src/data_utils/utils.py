@@ -71,8 +71,7 @@ def split_dataset(dataset, train_size, val_size, random=False):
 
 
 augmentations = transforms.Compose([
-    transforms.RandomResizedCrop(224, scale=(0.8, 1.0)),  
     transforms.RandomHorizontalFlip(p=0.5),               
-    # transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
+    transforms.ColorJitter(brightness=0.1, contrast=0.1),
     transforms.RandomAffine(degrees=15, scale=(0.9, 1.1), shear=5),
 ])
